@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>HealthCare Medical Store</title>
+<style>
+body{font-family:Arial,sans-serif;margin:0;background:#f4f8fb}header{background:#0b8f75;color:#fff;padding:15px;display:flex;justify-content:space-between}.hero{padding:80px;text-align:center;background:#dff7f1}.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;padding:20px}.card{background:#fff;padding:20px;border-radius:10px;box-shadow:0 2px 8px #ccc;text-align:center}button{background:#0b8f75;color:#fff;border:0;padding:10px 16px;border-radius:6px;cursor:pointer}footer{background:#0b8f75;color:#fff;text-align:center;padding:15px;margin-top:20px}
+</style></head><body>
+<header><h2>💊 HealthCare Medical Store</h2><div>🛒 Cart: <span id="count">0</span></div></header>
+<section class="hero"><h1>Your Trusted Medical Store</h1><p>Quality Medicines | Fast Delivery</p></section>
+<div style="text-align:center;padding:20px"><input id="search" onkeyup="searchMedicine()" placeholder="Search medicine..." style="padding:10px;width:60%"></div>
+<div class="products" id="medicineList">
+<div class="card"><h3>Paracetamol</h3><p>₹50</p><button onclick="addCart()">Add to Cart</button></div>
+<div class="card"><h3>Vitamin C</h3><p>₹120</p><button onclick="addCart()">Add to Cart</button></div>
+<div class="card"><h3>Cough Syrup</h3><p>₹95</p><button onclick="addCart()">Add to Cart</button></div>
+<div class="card"><h3>Face Mask</h3><p>₹40</p><button onclick="addCart()">Add to Cart</button></div>
+</div>
+<footer>© 2026 HealthCare Medical Store</footer>
+<script>
+let c=0;function addCart(){document.getElementById('count').textContent=++c;}
+function searchMedicine(){let v=document.getElementById('search').value.toUpperCase();document.querySelectorAll('.card').forEach(x=>x.style.display=x.querySelector('h3').innerText.toUpperCase().includes(v)?'block':'none');}
+</script></body></html>
